@@ -1,0 +1,33 @@
+.sportlist{
+  background-color: #61dafb;
+  display: flex;
+  flex-direction: column;
+  max-width: 117px;
+  padding: 27px;
+
+  .sportlist--item, .sportlist--copyrights{
+    margin-right: auto;
+  }
+
+  .sportlist--item{
+    padding: 18px;
+    background-color: $color-white;
+    margin-bottom: 20px;
+    border-radius: 6px;
+  }
+
+  #sportlist--item--yoga{
+    margin-top: 270px;
+  }
+
+  #sportlist--item--bodybuilding{
+    margin-bottom: 240px;
+  }
+
+  .sportlist--copyrights{
+    transform: rotate(-90deg);
+    font-size: 12px;
+    white-space: nowrap;
+    margin: 0;
+  }
+}

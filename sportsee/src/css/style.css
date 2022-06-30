@@ -1,0 +1,70 @@
+/*COULEURS*/
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #020203;
+}
+header .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 19px 29px;
+}
+header .logo .logo__title {
+  color: #E60000;
+  font-size: 24px;
+  margin-left: 10.5px;
+}
+header .logo .logo__menu {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 87px;
+}
+header .logo .logo__menu a {
+  text-decoration: none;
+}
+header .logo .logo__menu a li {
+  color: #ffffff;
+  font-size: 24px;
+}
+header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu__account, header .logo .logo__menu #logo__menu__setting {
+  margin-right: 204px;
+}
+
+.sportlist {
+  background-color: #61dafb;
+  display: flex;
+  flex-direction: column;
+  max-width: 117px;
+  padding: 27px;
+}
+.sportlist .sportlist--item, .sportlist .sportlist--copyrights {
+  margin-right: auto;
+}
+.sportlist .sportlist--item {
+  padding: 18px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+.sportlist #sportlist--item--yoga {
+  margin-top: 270px;
+}
+.sportlist #sportlist--item--bodybuilding {
+  margin-bottom: 240px;
+}
+.sportlist .sportlist--copyrights {
+  transform: rotate(-90deg);
+  font-size: 12px;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
