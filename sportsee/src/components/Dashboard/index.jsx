@@ -1,3 +1,7 @@
+import { BarChartDiagram } from "../BarChartDiagram";
+import { LineChartDiagram } from "../LineChartDiagram";
+import { SimpleRadarChartDiagram } from "../SimpleRadarChartDiagram";
+
 export const Dashboard = ({ nameUser }) => {
   return (
     <div className={"dashboard-content"}>

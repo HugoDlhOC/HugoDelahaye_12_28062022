@@ -7,23 +7,57 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
-import { USER_PERFORMANCE } from "../../assets/data/data";
+import {
+  USER_AVERAGE_SESSIONS,
+  USER_PERFORMANCE,
+} from "../../assets/data/data";
 
 export const SimpleRadarChartDiagram = () => {
+  const dataFake = [
+    {
+      subject: "Math",
+      A: 120,
+    },
+    {
+      subject: "Chinese",
+      A: 98,
+    },
+    {
+      subject: "English",
+      A: 86,
+    },
+    {
+      subject: "Geography",
+      A: 99,
+    },
+    {
+      subject: "Physics",
+      A: 85,
+    },
+    {
+      subject: "History",
+      A: 65,
+    },
+  ];
+
   const data = [];
-
-  USER_PERFORMANCE[0].kind.forEach((item, index) => {
+  Object.values(USER_PERFORMANCE[1].kind).forEach((item, index) => {
     data.push({
-      kindName: item,
+      subject: item,
+      A: USER_PERFORMANCE[1].data[index].value,
     });
   });
-
-  USER_PERFORMANCE[0].data.forEach((item, index) => {
-    data.push({
-      value: item.value,
-      kind: item.kind,
-    });
+  /*Object.values(USER_PERFORMANCE[0].kind).forEach((item, index) => {
+  data.push({
+    subject: item,
   });
+});
+
+USER_PERFORMANCE[0].data.forEach((item, index) => {
+  data.push({
+    A: item.value,
+  });
+});*/
 
   console.log(data);
 
@@ -37,8 +71,8 @@ export const SimpleRadarChartDiagram = () => {
           name="Mike"
           dataKey="A"
           stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.6}
+          fill="#FF0101B2"
+          fillOpacity={0.7}
         />
       </RadarChart>
     </ResponsiveContainer>

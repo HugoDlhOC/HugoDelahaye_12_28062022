@@ -35,7 +35,7 @@ export const LineChartDiagram = () => {
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid strokeDasharray="3 3" fill={"#FF0000"} />
         <XAxis dataKey="day" />
         <YAxis />
         <Tooltip />
@@ -43,7 +43,7 @@ export const LineChartDiagram = () => {
         <Line
           type="monotone"
           dataKey="sessionLength"
-          stroke="#8884d8"
+          stroke="linear-gradient=(#e66465, #9198e5)"
           activeDot={{ r: 8 }}
         />
       </LineChart>
