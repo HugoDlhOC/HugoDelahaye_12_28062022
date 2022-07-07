@@ -71,6 +71,13 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
   margin: 0;
 }
 
+.dashboard-content .dashboard-content--message {
+  font-size: 48px;
+}
+.dashboard-content .dashboard-content--message .dashboard-content--name {
+  color: #FF0101;
+}
+
 .barchart--tooltip--item {
   color: #FFFFFF;
   background-color: #E60000;
@@ -86,6 +93,45 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
 
 #dashboard-content--barchart--legend--item--icon--kcal {
   background-color: #E60000;
+}
+
+.nutritionaldata--element {
+  margin-bottom: 39px;
+  display: flex;
+  padding: 32px;
+  background-color: #FBFBFB;
+  border-radius: 5px;
+}
+.nutritionaldata--element .nutritionaldata--element--data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.nutritionaldata--element .nutritionaldata--element--data strong {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+.nutritionaldata--element .nutritionaldata--element--data span {
+  font-size: 14px;
+  color: #74798C;
+}
+.nutritionaldata--element .nutritionaldata--element--icon {
+  padding: 21px;
+  margin-right: 24px;
+  border-radius: 6px;
+}
+.nutritionaldata--element #nutritionaldata--element--icon--calories {
+  background-color: rgb(251, 234, 234);
+}
+.nutritionaldata--element #nutritionaldata--element--icon--protein {
+  background-color: rgba(74, 184, 255, 0.1);
+}
+.nutritionaldata--element #nutritionaldata--element--icon--carbohydrates {
+  background-color: rgb(250, 246, 229);
+}
+.nutritionaldata--element #nutritionaldata--element--icon--lipids {
+  background-color: rgba(253, 81, 129, 0.1);
 }
 
 /*# sourceMappingURL=style.css.map */

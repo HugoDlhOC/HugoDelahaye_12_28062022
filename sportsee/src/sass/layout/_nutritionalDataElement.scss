@@ -1,0 +1,45 @@
+.nutritionaldata--element{
+  margin-bottom: 39px;
+  display: flex;
+  padding: 32px;
+  background-color: #FBFBFB;
+  border-radius: 5px;
+
+  .nutritionaldata--element--data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    strong{
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+    span{
+      font-size: 14px;
+      color: $color_grey;
+    }
+  }
+
+  .nutritionaldata--element--icon{
+    padding: 21px;
+    margin-right: 24px;
+    border-radius: 6px;
+  }
+
+  #nutritionaldata--element--icon--calories{
+    background-color: rgb(251, 234, 234);
+  }
+
+  #nutritionaldata--element--icon--protein{
+    background-color: rgba(74, 184, 255, 0.1);
+  }
+
+  #nutritionaldata--element--icon--carbohydrates{
+    background-color: rgb(250, 246, 229);
+  }
+
+  #nutritionaldata--element--icon--lipids{
+    background-color: rgba(253, 81, 129, 0.1);
+  }
+}

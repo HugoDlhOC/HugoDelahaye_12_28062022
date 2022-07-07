@@ -1,2 +1,9 @@
 .dashboard-content{
+  .dashboard-content--message{
+    font-size: 48px;
+
+    .dashboard-content--name{
+      color: $primary_color;
+    }
+  }
 }

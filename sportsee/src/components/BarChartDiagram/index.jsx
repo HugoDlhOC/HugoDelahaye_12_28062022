@@ -64,7 +64,6 @@ export const BarChartDiagram = (props) => {
             }}
             content={<CustomTooltip />}
           />
-          <Legend />
           <Bar dataKey="kg" fill="#282D30" barSize={7} radius={[3, 3, 0, 0]} />
           <Bar
             dataKey="kcal"
