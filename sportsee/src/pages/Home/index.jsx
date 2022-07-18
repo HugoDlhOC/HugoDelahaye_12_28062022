@@ -6,8 +6,9 @@ import { BarChartDiagram } from "../../components/BarChartDiagram";
 import { LineChartDiagram } from "../../components/LineChartDiagram";
 import { SimpleRadarChartDiagram } from "../../components/SimpleRadarChartDiagram";
 import { CustomActiveShapePieChartDiagram } from "../../components/CustomActiveShapePieChartDiagram";
+import AxiosComponent from "../../components/AxiosComponent";
 
-export const Home = (props) => {
+export const Home = () => {
   console.log(USER_MAIN_DATA[0].userInfos.firstName);
   return (
     <div>
@@ -15,10 +16,8 @@ export const Home = (props) => {
       <section id={"dashboard"}>
         <SportsList />
         <Dashboard nameUser={USER_MAIN_DATA[0].userInfos.firstName} />
+        <AxiosComponent typeOfChart={"activity"} userId={"12"} />
       </section>
-      <BarChartDiagram />
-      <LineChartDiagram />
-      <SimpleRadarChartDiagram />
     </div>
   );
 };

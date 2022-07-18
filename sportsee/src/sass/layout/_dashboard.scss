@@ -1,9 +1,38 @@
 .dashboard-content{
+  margin-left: 109px;
+  margin-top: 38px;
+
+  .dashboard-content--userinfo{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 77px;
+  }
+
   .dashboard-content--message{
     font-size: 48px;
+    margin-bottom: 41px;
 
     .dashboard-content--name{
       color: $primary_color;
     }
   }
+
+  .dashboard-content--diagrams-nutritionalgroup{
+    display: grid;
+
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    gap: 31px;
+  }
+
+  .nutritionaldata--group{
+    grid-row-start: 1;
+    grid-column-start: 4;
+
+    grid-row-end: 3;
+    grid-column-end: 5;
+  }
 }
+
+

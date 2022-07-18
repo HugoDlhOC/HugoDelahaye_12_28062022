@@ -71,27 +71,86 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
   margin: 0;
 }
 
+.dashboard-content {
+  margin-left: 109px;
+  margin-top: 38px;
+}
+.dashboard-content .dashboard-content--userinfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 77px;
+}
 .dashboard-content .dashboard-content--message {
   font-size: 48px;
+  margin-bottom: 41px;
 }
 .dashboard-content .dashboard-content--message .dashboard-content--name {
   color: #FF0101;
 }
+.dashboard-content .dashboard-content--diagrams-nutritionalgroup {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 31px;
+}
+.dashboard-content .nutritionaldata--group {
+  grid-row-start: 1;
+  grid-column-start: 4;
+  grid-row-end: 3;
+  grid-column-end: 5;
+}
 
-.barchart--tooltip--item {
+.barchart-tooltip .barchart-tooltip--item {
   color: #FFFFFF;
   background-color: #E60000;
   padding: 7px;
   font-size: 24px;
 }
 
-#dashboard-content--barchart--legend--item--icon--kg, #dashboard-content--barchart--legend--item--icon--kcal {
-  background-color: #282D30;
-  padding: 0px 10px;
-  border-radius: 50%;
+.dashboard-content--barchart {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 2;
+  grid-column-end: 4;
+  width: 835px;
+  height: 320px;
+  background-color: #FBFBFB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
-
-#dashboard-content--barchart--legend--item--icon--kcal {
+.dashboard-content--barchart figcaption {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+}
+.dashboard-content--barchart .dashboard-content--barchart--legend {
+  display: flex;
+  align-self: end;
+  margin-top: 24px;
+  margin-bottom: 64px;
+}
+.dashboard-content--barchart .dashboard-content--barchart--legend .dashboard-content--barchart--legend--item {
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+}
+.dashboard-content--barchart .dashboard-content--barchart--legend .dashboard-content--barchart--legend--item--text {
+  font-size: 14px;
+}
+.dashboard-content--barchart #dashboard-content--barchart--legend--item--icon--kg, .dashboard-content--barchart #dashboard-content--barchart--legend--item--icon--kcal {
+  background-color: #282D30;
+  height: 8px;
+  width: 8px;
+  display: flex;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.dashboard-content--barchart #dashboard-content--barchart--legend--item--icon--kg span, .dashboard-content--barchart #dashboard-content--barchart--legend--item--icon--kcal span {
+  font-size: 14px;
+}
+.dashboard-content--barchart #dashboard-content--barchart--legend--item--icon--kcal {
   background-color: #E60000;
 }
 
@@ -132,6 +191,48 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
 }
 .nutritionaldata--element #nutritionaldata--element--icon--lipids {
   background-color: rgba(253, 81, 129, 0.1);
+}
+
+.dashboard-content--radarchart {
+  background-color: #282D30;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-row-end: 3;
+  grid-column-end: 3;
+  width: 258px;
+  height: 263px;
+}
+
+.dashboard-content--custompiechart {
+  background-color: #FBFBFB;
+  grid-row-start: 2;
+  grid-column-start: 3;
+  grid-row-end: 3;
+  grid-column-end: 4;
+  width: 258px;
+  height: 263px;
+}
+
+.dashboard-content--linechart {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 2;
+  width: 258px;
+  height: 263px;
+  position: relative;
+}
+.dashboard-content--linechart p {
+  position: absolute;
+  z-index: 1;
+  margin-top: 29px;
+  margin-left: 34px;
+  max-width: 147px;
+  color: #FF777C;
+  font-size: 15px;
+}
+.dashboard-content--linechart .dashboard-content--linechart--svg {
+  background-color: #FF0000;
 }
 
 /*# sourceMappingURL=style.css.map */

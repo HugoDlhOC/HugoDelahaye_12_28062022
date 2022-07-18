@@ -68,10 +68,26 @@ export const LineChartDiagram = () => {
   });
   console.log(data);
 
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div
+          className="linechart-tooltip"
+          style={{ backgroundColor: "white", padding: "11px" }}
+        >
+          <p
+            className="linechart-tooltip--item"
+            style={{ fontSize: "7px", color: "black" }}
+          >{`${payload[0].value + "min"}`}</p>
+        </div>
+      );
+    }
+  };
+
   return (
     <figure className={"dashboard-content--linechart"}>
-      <span>Durée moyenne des sessions</span>
-      <ResponsiveContainer width="100%" aspect={3}>
+      <p>Durée moyenne des sessions</p>
+      <ResponsiveContainer aspect={1}>
         <LineChart
           width={500}
           height={300}
@@ -82,34 +98,43 @@ export const LineChartDiagram = () => {
             left: 20,
             bottom: 5,
           }}
-          onMouseMove={(e) => {
-            //gestionnaire d'événements personnalisé de mouvement de souris
-            if (e.isTooltipActive === true) {
-              //Controle si l'info bulle est active
-              const div = document.querySelector(
-                ".dashboard-content--linechart"
-              ); //Récupération du diagramme
-              const windowWidthDivChart = div.clientWidth; //Taille sur la div actuelle stockée dans
-              const mouseXpercentage = Math.round(
-                //Calcul permettant, avec la position de la souris obtenir un pourcentage qui va ensuite être appliqué au dégradé que l'on souhaite obtenir
-                (e.activeCoordinate.x / windowWidthDivChart) * 100
-              );
-              div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercentage}%, rgba(175,0,0,1.5) ${mouseXpercentage}%, rgba(175,0,0,1.5) 100%)`; //Application du dégradé
-            }
-          }}
+          className={"dashboard-content--linechart--svg"}
         >
           <CartesianGrid fill={"#FF0000"} vertical={false} horizontal={false} />
-          <XAxis dataKey="day" />
+          <XAxis
+            dataKey="day"
+            stroke={"#FF7B80"}
+            axisLine={false}
+            tickLine={false}
+          />
           <YAxis display={"none"} />
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} cursor={<CustomHover />} />
           <Line
             type="monotone"
             dataKey="sessionLength"
             stroke="white"
-            activeDot={{ r: 8 }}
+            activeDot={{
+              background: "#FFFFFF",
+              stroke: "rgba(255, 255, 255, 0.3)",
+              strokeWidth: 10,
+              r: 4,
+            }}
+            dot={{ r: 0 }}
           />
         </LineChart>
       </ResponsiveContainer>
     </figure>
+  );
+};
+
+const CustomHover = ({ points }) => {
+  return (
+    <rect
+      x={points[0].x}
+      y={0}
+      height="100%"
+      width="100%"
+      fill="rgba(0, 0, 0, 0.1)"
+    />
   );
 };

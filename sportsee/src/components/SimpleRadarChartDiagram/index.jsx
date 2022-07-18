@@ -47,34 +47,30 @@ export const SimpleRadarChartDiagram = () => {
       A: USER_PERFORMANCE[1].data[index].value,
     });
   });
-  /*Object.values(USER_PERFORMANCE[0].kind).forEach((item, index) => {
-  data.push({
-    subject: item,
-  });
-});
-
-USER_PERFORMANCE[0].data.forEach((item, index) => {
-  data.push({
-    A: item.value,
-  });
-});*/
 
   console.log(data);
 
   return (
-    <ResponsiveContainer width="100%" aspect={3}>
-      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-        <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />
-        <PolarRadiusAxis />
-        <Radar
-          name="Mike"
-          dataKey="A"
-          stroke="#8884d8"
-          fill="#FF0101B2"
-          fillOpacity={0.7}
-        />
-      </RadarChart>
-    </ResponsiveContainer>
+    <figure className={"dashboard-content--radarchart"}>
+      <ResponsiveContainer width="100%" aspect={1}>
+        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+          <PolarGrid stroke={"white"} radialLines={false} />
+          <PolarAngleAxis
+            dataKey="subject"
+            stroke={"white"}
+            fontSize={"12px"}
+            tickLine={false}
+          />
+          <PolarRadiusAxis axisLine={false} tick={false} />
+          <Radar
+            name="Mike"
+            dataKey="A"
+            stroke="#8884d8"
+            fill="#FF0101B2"
+            fillOpacity={0.7}
+          />
+        </RadarChart>
+      </ResponsiveContainer>
+    </figure>
   );
 };
