@@ -18,20 +18,34 @@
   }
 
   .dashboard-content--diagrams-nutritionalgroup{
-    display: grid;
+    display: flex;
 
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    .dashboard-content--diagrams{
+      width: 835px;
 
-    gap: 31px;
+      .dashboard-content--diagrams-secondary{
+        display: flex;
+        width: 835px;
+      }
+    }
   }
+}
 
-  .nutritionaldata--group{
-    grid-row-start: 1;
-    grid-column-start: 4;
+@media (max-width: 1350px) {
+  .dashboard-content {
+    .dashboard-content--diagrams-nutritionalgroup{
+      flex-direction: column;
 
-    grid-row-end: 3;
-    grid-column-end: 5;
+      .dashboard-content--diagrams{
+        order: 1;
+      }
+    }
+
+    .nutritionaldata--group{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr ;
+    }
   }
 }
 

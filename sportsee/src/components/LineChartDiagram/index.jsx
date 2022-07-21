@@ -73,11 +73,21 @@ export const LineChartDiagram = () => {
       return (
         <div
           className="linechart-tooltip"
-          style={{ backgroundColor: "white", padding: "11px" }}
+          style={{
+            backgroundColor: "white",
+            padding: "14px",
+            marginTop: "0px",
+            marginLeft: "0px",
+          }}
         >
           <p
             className="linechart-tooltip--item"
-            style={{ fontSize: "7px", color: "black" }}
+            style={{
+              fontSize: "7px",
+              color: "black",
+              marginTop: "-5px",
+              marginLeft: "-10px",
+            }}
           >{`${payload[0].value + "min"}`}</p>
         </div>
       );
@@ -89,16 +99,10 @@ export const LineChartDiagram = () => {
       <p>Durée moyenne des sessions</p>
       <ResponsiveContainer aspect={1}>
         <LineChart
-          width={500}
-          height={300}
           data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
           className={"dashboard-content--linechart--svg"}
+          width={258}
+          height={263}
         >
           <CartesianGrid fill={"#FF0000"} vertical={false} horizontal={false} />
           <XAxis
@@ -106,8 +110,11 @@ export const LineChartDiagram = () => {
             stroke={"#FF7B80"}
             axisLine={false}
             tickLine={false}
+            fontSize={12}
+            padding={{ left: 26, right: 26 }}
+            tickMargin={0}
           />
-          <YAxis display={"none"} />
+
           <Tooltip content={<CustomTooltip />} cursor={<CustomHover />} />
           <Line
             type="monotone"

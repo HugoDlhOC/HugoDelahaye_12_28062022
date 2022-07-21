@@ -2,10 +2,6 @@ import { USER_MAIN_DATA } from "../../assets/data/data"; //Tab d'objets
 import { Header } from "../../components/Header";
 import { SportsList } from "../../components/SportsList";
 import { Dashboard } from "../../components/Dashboard";
-import { BarChartDiagram } from "../../components/BarChartDiagram";
-import { LineChartDiagram } from "../../components/LineChartDiagram";
-import { SimpleRadarChartDiagram } from "../../components/SimpleRadarChartDiagram";
-import { CustomActiveShapePieChartDiagram } from "../../components/CustomActiveShapePieChartDiagram";
 import AxiosComponent from "../../components/AxiosComponent";
 
 export const Home = () => {

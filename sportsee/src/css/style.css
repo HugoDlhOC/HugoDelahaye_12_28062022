@@ -14,10 +14,10 @@ header {
   background-color: #020203;
 }
 header .logo {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   align-items: center;
   padding: 19px 29px;
+  grid-template-columns: 0.5fr 3fr 13fr;
 }
 header .logo .logo__title {
   color: #E60000;
@@ -25,11 +25,10 @@ header .logo .logo__title {
   margin-left: 10.5px;
 }
 header .logo .logo__menu {
-  display: flex;
-  flex-direction: row;
   list-style: none;
-  margin-left: auto;
-  margin-right: 87px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 header .logo .logo__menu a {
   text-decoration: none;
@@ -38,9 +37,6 @@ header .logo .logo__menu a li {
   color: #ffffff;
   font-size: 24px;
 }
-header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu__account, header .logo .logo__menu #logo__menu__setting {
-  margin-right: 204px;
-}
 
 .sportlist {
   background-color: #020203;
@@ -48,15 +44,21 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
   flex-direction: column;
   max-width: 117px;
   padding: 27px;
+  position: relative;
+  height: 1024px;
 }
 .sportlist .sportlist--item, .sportlist .sportlist--copyrights {
   margin-right: auto;
+  width: 64px;
+  height: 64px;
 }
 .sportlist .sportlist--item {
   padding: 18px;
   background-color: #ffffff;
   margin-bottom: 20px;
   border-radius: 6px;
+  display: flex;
+  align-items: center;
 }
 .sportlist #sportlist--item--yoga {
   margin-top: 270px;
@@ -69,6 +71,10 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
   font-size: 12px;
   white-space: nowrap;
   margin: 0;
+  color: #ffffff;
+  position: absolute;
+  bottom: 59px;
+  left: 42px;
 }
 
 .dashboard-content {
@@ -88,48 +94,61 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
   color: #FF0101;
 }
 .dashboard-content .dashboard-content--diagrams-nutritionalgroup {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 31px;
+  display: flex;
 }
-.dashboard-content .nutritionaldata--group {
-  grid-row-start: 1;
-  grid-column-start: 4;
-  grid-row-end: 3;
-  grid-column-end: 5;
+.dashboard-content .dashboard-content--diagrams-nutritionalgroup .dashboard-content--diagrams {
+  width: 835px;
+}
+.dashboard-content .dashboard-content--diagrams-nutritionalgroup .dashboard-content--diagrams .dashboard-content--diagrams-secondary {
+  display: flex;
+  width: 835px;
 }
 
+@media (max-width: 1350px) {
+  .dashboard-content .dashboard-content--diagrams-nutritionalgroup {
+    flex-direction: column;
+  }
+  .dashboard-content .dashboard-content--diagrams-nutritionalgroup .dashboard-content--diagrams {
+    order: 1;
+  }
+  .dashboard-content .nutritionaldata--group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
 .barchart-tooltip .barchart-tooltip--item {
   color: #FFFFFF;
   background-color: #E60000;
   padding: 7px;
   font-size: 24px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 }
 
 .dashboard-content--barchart {
-  grid-row-start: 1;
-  grid-column-start: 1;
-  grid-row-end: 2;
-  grid-column-end: 4;
-  width: 835px;
-  height: 320px;
   background-color: #FBFBFB;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 835px;
+  height: 320px;
   position: relative;
+  padding-left: 43px;
+  border-radius: 5px;
+  margin-right: 61px;
+  margin-bottom: 28px;
 }
 .dashboard-content--barchart figcaption {
   position: absolute;
   top: 24px;
-  left: 32px;
+  left: 46px;
 }
 .dashboard-content--barchart .dashboard-content--barchart--legend {
   display: flex;
   align-self: end;
   margin-top: 24px;
   margin-bottom: 64px;
+  margin-right: 38px;
 }
 .dashboard-content--barchart .dashboard-content--barchart--legend .dashboard-content--barchart--legend--item {
   display: flex;
@@ -160,6 +179,10 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
   padding: 32px;
   background-color: #FBFBFB;
   border-radius: 5px;
+  width: 258px;
+  height: 124px;
+  margin-left: 32px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 }
 .nutritionaldata--element .nutritionaldata--element--data {
   display: flex;
@@ -195,32 +218,56 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
 
 .dashboard-content--radarchart {
   background-color: #282D30;
-  grid-row-start: 2;
-  grid-column-start: 2;
-  grid-row-end: 3;
-  grid-column-end: 3;
+  margin-right: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   width: 258px;
   height: 263px;
 }
 
 .dashboard-content--custompiechart {
   background-color: #FBFBFB;
-  grid-row-start: 2;
-  grid-column-start: 3;
-  grid-row-end: 3;
-  grid-column-end: 4;
-  width: 258px;
-  height: 263px;
-}
-
-.dashboard-content--linechart {
-  grid-row-start: 2;
-  grid-column-start: 1;
-  grid-row-end: 3;
-  grid-column-end: 2;
   width: 258px;
   height: 263px;
   position: relative;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+}
+.dashboard-content--custompiechart figcaption {
+  font-size: 15px;
+  color: #282D30;
+  margin-top: 24px;
+  margin-left: 30px;
+}
+.dashboard-content--custompiechart .custompiechart--labels label {
+  position: absolute;
+}
+.dashboard-content--custompiechart .custompiechart--labels #custompiechart--label-two, .dashboard-content--custompiechart .custompiechart--labels #custompiechart--label-three {
+  font-size: 16px;
+  color: #74798C;
+}
+.dashboard-content--custompiechart .custompiechart--labels #custompiechart--label-one {
+  font-size: 20px;
+  left: 43%;
+  top: 105px;
+  color: #282D30;
+  font-weight: bold;
+}
+.dashboard-content--custompiechart .custompiechart--labels #custompiechart--label-two {
+  top: 128px;
+  left: 39%;
+}
+.dashboard-content--custompiechart .custompiechart--labels #custompiechart--label-three {
+  top: 148px;
+  left: 41%;
+}
+
+.dashboard-content--linechart {
+  position: relative;
+  margin-right: 30px;
+  overflow: auto;
+  border-radius: 5px;
+  background-color: red;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 }
 .dashboard-content--linechart p {
   position: absolute;
@@ -230,9 +277,7 @@ header .logo .logo__menu #logo__menu__home, header .logo .logo__menu #logo__menu
   max-width: 147px;
   color: #FF777C;
   font-size: 15px;
-}
-.dashboard-content--linechart .dashboard-content--linechart--svg {
-  background-color: #FF0000;
+  cursor: default;
 }
 
 /*# sourceMappingURL=style.css.map */

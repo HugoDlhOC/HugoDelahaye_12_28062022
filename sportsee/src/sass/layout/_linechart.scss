@@ -1,14 +1,10 @@
 .dashboard-content--linechart{
-  grid-row-start: 2;
-  grid-column-start: 1;
-
-  grid-row-end: 3;
-  grid-column-end: 2;
-
-  width: 258px;
-  height: 263px;
-
   position: relative;
+  margin-right: 30px;
+  overflow: auto;
+  border-radius: 5px;
+  background-color: red;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 
   p{
     position: absolute;
@@ -18,9 +14,10 @@
     max-width: 147px;
     color: #FF777C;
     font-size: 15px;
+    cursor: default;
   }
 
   .dashboard-content--linechart--svg {
-    background-color: #FF0000;
+
   }
 }

@@ -4,29 +4,27 @@
     background-color: #E60000;
     padding: 7px;
     font-size: 24px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   }
 }
+
 .dashboard-content--barchart{
-  grid-row-start: 1;
-  grid-column-start: 1;
-
-  grid-row-end: 2;
-  grid-column-end: 4;
-
-  width: 835px;
-  height: 320px;
-
   background-color: $color_light_grey;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  width: 835px;
+  height: 320px;
   position: relative;
+  padding-left: 43px;
+  border-radius: 5px;
+  margin-right: 61px;
+  margin-bottom: 28px;
 
   figcaption{
     position: absolute;
     top: 24px;
-    left: 32px;
+    left: 46px;
   }
 
   .dashboard-content--barchart--legend{
@@ -34,6 +32,7 @@
     align-self: end;
     margin-top: 24px;
     margin-bottom: 64px;
+    margin-right: 38px;
 
     .dashboard-content--barchart--legend--item{
       display: flex;

@@ -2,6 +2,10 @@ import axios from "axios";
 //Ce fichier a pour rôle de gérer les requêtes
 
 //Le rôle de cette fonction est d'aller chercher tous les posts de l'API
+/**
+ *
+ * @returns {Promise<any>}
+ */
 export const findAll = () => {
   return fetch("http://localhost:3000/user/12")
     .then((response) => {

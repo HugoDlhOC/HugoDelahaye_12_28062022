@@ -4,9 +4,13 @@
   flex-direction: column;
   max-width: 117px;
   padding: 27px;
+  position: relative;
+  height: 1024px;
 
   .sportlist--item, .sportlist--copyrights{
     margin-right: auto;
+    width: 64px;
+    height: 64px;
   }
 
   .sportlist--item{
@@ -14,6 +18,8 @@
     background-color: $color-white;
     margin-bottom: 20px;
     border-radius: 6px;
+    display: flex;
+    align-items: center;
   }
 
   #sportlist--item--yoga{
@@ -29,5 +35,10 @@
     font-size: 12px;
     white-space: nowrap;
     margin: 0;
+    color: $color_white;
+    position: absolute;
+    bottom: 59px;
+    left: 42px;
+
   }
 }

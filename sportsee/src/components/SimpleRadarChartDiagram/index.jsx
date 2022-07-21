@@ -13,47 +13,21 @@ import {
 } from "../../assets/data/data";
 
 export const SimpleRadarChartDiagram = () => {
-  const dataFake = [
-    {
-      subject: "Math",
-      A: 120,
-    },
-    {
-      subject: "Chinese",
-      A: 98,
-    },
-    {
-      subject: "English",
-      A: 86,
-    },
-    {
-      subject: "Geography",
-      A: 99,
-    },
-    {
-      subject: "Physics",
-      A: 85,
-    },
-    {
-      subject: "History",
-      A: 65,
-    },
-  ];
-
   const data = [];
+
   Object.values(USER_PERFORMANCE[1].kind).forEach((item, index) => {
     data.push({
-      subject: item,
+      subject: item.charAt(0).toUpperCase() + item.slice(1), //Uppercase first letter like the page on Figma
       A: USER_PERFORMANCE[1].data[index].value,
     });
   });
 
-  console.log(data);
+  data.reverse(); //inversement des données pour correspondre à la maquette
 
   return (
     <figure className={"dashboard-content--radarchart"}>
       <ResponsiveContainer width="100%" aspect={1}>
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
           <PolarGrid stroke={"white"} radialLines={false} />
           <PolarAngleAxis
             dataKey="subject"

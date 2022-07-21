@@ -17,7 +17,7 @@ import { USER_ACTIVITY } from "../../assets/data/data";
 import { logDOM } from "@testing-library/react";
 
 export const BarChartDiagram = () => {
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState(null);
 
   //Le hook useEffect ne peut pas être une fct asynchrone, donc création d'une fonction fecthAllPosts()
   useEffect(() => {
@@ -28,7 +28,12 @@ export const BarChartDiagram = () => {
     const dataTest = await findDataChart("12", "activity");
     setPosts(dataTest);
   };
-  console.log(posts);
+
+  if (posts === null) {
+    return null;
+  }
+
+  console.log(posts.data.sessions);
   console.log(USER_ACTIVITY);
   const data = [];
   USER_ACTIVITY[0].sessions.forEach((item, index) => {
@@ -46,10 +51,7 @@ export const BarChartDiagram = () => {
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
-        <div
-          className="barchart-tooltip"
-          style={{ backgroundColor: "red", padding: "11px" }}
-        >
+        <div className="barchart-tooltip" style={{ padding: "11px" }}>
           <p
             className="barchart-tooltip--item"
             style={{ fontSize: "7px", color: "white" }}
@@ -86,7 +88,7 @@ export const BarChartDiagram = () => {
           </span>
         </div>
       </div>
-      <ResponsiveContainer width="90%" aspect={4}>
+      <ResponsiveContainer aspect={4}>
         <BarChart data={data} barGap={"7%"} separator={""}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis dataKey="nameXAxis" tickLine={false} />
