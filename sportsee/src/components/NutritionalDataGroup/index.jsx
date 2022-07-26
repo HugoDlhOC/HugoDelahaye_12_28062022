@@ -1,13 +1,18 @@
-import { USER_MAIN_DATA } from "../../assets/data/data";
 import { NutritionalDataElement } from "../NutritionalDataElement";
 import { ReactComponent as IconCalories } from "../../assets/icons/iconCalories.svg";
 import { ReactComponent as IconCarbohydrates } from "../../assets/icons/iconCarbohydrates.svg";
 import { ReactComponent as IconLipids } from "../../assets/icons/iconLipids.svg";
 import { ReactComponent as IconProtein } from "../../assets/icons/iconProtein.svg";
+import PropTypes from "prop-types";
+import { CustomActiveShapePieChartDiagram } from "../CustomActiveShapePieChartDiagram";
 
-export const NutritionalDataGroup = () => {
-  const data = USER_MAIN_DATA[0].keyData;
-  console.log(data);
+/**
+ * component display data nutrition of user
+ * @param dataAPI
+ * @returns {JSX.Element}
+ */
+export const NutritionalDataGroup = (dataAPI) => {
+  const data = dataAPI.dataAPI.keyData;
   return (
     <div className={"nutritionaldata--group"}>
       <NutritionalDataElement
@@ -36,4 +41,8 @@ export const NutritionalDataGroup = () => {
       />
     </div>
   );
+};
+
+NutritionalDataGroup.propTypes = {
+  dataAPI: PropTypes.object.isRequired,
 };

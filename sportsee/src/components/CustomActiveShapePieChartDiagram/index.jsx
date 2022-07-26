@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+//import * as dotenv from "dotenv";
 import {
   PieChart,
   Pie,
@@ -8,17 +9,25 @@ import {
   Label,
 } from "recharts";
 import { USER_MAIN_DATA } from "../../assets/data/data";
+import PropTypes from "prop-types";
 
-export const CustomActiveShapePieChartDiagram = () => {
+/**
+ * component CustomActiveShapePieChart for illustrate the user's percentage goal
+ * @param dataAPI
+ * @returns {JSX.Element}
+ */
+export const CustomActiveShapePieChartDiagram = (dataAPI) => {
   const data = [
-    { name: "Group A", value: 1 - USER_MAIN_DATA[0].todayScore },
-    { name: "Group B", value: USER_MAIN_DATA[0].todayScore },
+    { name: "Group A", value: 1 - dataAPI.dataAPI.todayScore },
+    { name: "Group B", value: dataAPI.dataAPI.todayScore },
   ];
 
   const dataFillingDiagram = [{ name: "Group A", value: 1 }];
 
   const COLORS = ["#FBFBFB", "#FF0000"];
-
+  //dotenv.config();
+  console.log(process.env.REACT_APP_API_URL);
+  console.log(process.env.REACT_APP_API_USERID);
   return (
     <figure className={"dashboard-content--custompiechart"}>
       <figcaption>Score</figcaption>
@@ -46,7 +55,7 @@ export const CustomActiveShapePieChartDiagram = () => {
             floodColor={"red"}
             lightingColor={"red"}
             dataKey="value"
-            startAngle={90} //placement de valeur au commencement du cercle
+            startAngle={90} //placing value at the beginning of the circle
             endAngle={-270}
             stroke={"none"}
           >
@@ -68,4 +77,8 @@ export const CustomActiveShapePieChartDiagram = () => {
       </div>
     </figure>
   );
+};
+
+CustomActiveShapePieChartDiagram.propTypes = {
+  dataAPI: PropTypes.object.isRequired,
 };

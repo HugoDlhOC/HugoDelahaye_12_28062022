@@ -1,5 +1,15 @@
 import PropTypes from "prop-types";
+import { CustomActiveShapePieChartDiagram } from "../CustomActiveShapePieChartDiagram";
 
+/**
+ * component display the logo of website
+ * @param width
+ * @param height
+ * @param fillBackground
+ * @param fillHead
+ * @param fillBody
+ * @returns {JSX.Element}
+ */
 export const LogoSportSee = ({
   width,
   height,
@@ -31,4 +41,12 @@ export const LogoSportSee = ({
       </g>
     </svg>
   );
+};
+
+LogoSportSee.propTypes = {
+  width: PropTypes.string.isRequired,
+  height: PropTypes.string.isRequired,
+  fillBackground: PropTypes.string.isRequired,
+  fillHead: PropTypes.string.isRequired,
+  fillBody: PropTypes.string.isRequired,
 };

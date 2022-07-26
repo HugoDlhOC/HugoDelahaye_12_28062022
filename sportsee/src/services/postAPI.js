@@ -1,22 +1,30 @@
-import axios from "axios";
-//Ce fichier a pour rôle de gérer les requêtes
-
-//Le rôle de cette fonction est d'aller chercher tous les posts de l'API
+//This file is used to manage requests
 /**
- *
- * @returns {Promise<any>}
+ * The role of this function is to fetch all posts from the API
+ * @param dataAPI
+ * @returns {Promise}
  */
-export const findAll = () => {
-  return fetch("http://localhost:3000/user/12")
+export const findAll = (userID) => {
+  return fetch(`${process.env.REACT_APP_API_URL}${userID}`)
     .then((response) => {
-      return response.json();
+      if (response.ok) {
+        return response.json();
+      } else {
+        //redirect to catch with throw
+        throw new Error("User ID is unknown");
+      }
     })
     .then((data) => data);
 };
 
-//Le rôle de cette fonction est d'aller chercher les données du diagramme en batons
+/**
+ * The role of this function is to fetch the data from the different charts
+ * @param userID
+ * @param typeOfChart
+ * @returns {Promise}
+ */
 export const findDataChart = (userID, typeOfChart) => {
-  return fetch(`http://localhost:3000/user/${userID}/${typeOfChart}`)
+  return fetch(`${process.env.REACT_APP_API_URL}${userID}/${typeOfChart}`)
     .then((response) => {
       return response.json();
     })

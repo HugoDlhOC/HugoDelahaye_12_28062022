@@ -1,4 +1,5 @@
-import React, { PureComponent } from "react";
+import React, { useEffect, useState } from "react";
+import { findDataChart } from "../../services/postAPI";
 import {
   LineChart,
   Line,
@@ -9,11 +10,34 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { USER_AVERAGE_SESSIONS } from "../../assets/data/data";
 
+/**
+ * component LineChartDiagram for USER_AVERAGE_SESSIONS data, realized with Recharts
+ * @returns {JSX.Element}
+ */
 export const LineChartDiagram = () => {
+  const [posts, setPosts] = useState(null);
+
+  //The useEffect hook cannot be an asynchronous fct, so creating a fecthAllPosts() function
+  useEffect(() => {
+    fetchAllPosts();
+  }, []);
+
+  const fetchAllPosts = async () => {
+    const data = await findDataChart(
+      process.env.REACT_APP_API_USERID,
+      process.env.REACT_APP_API_ENDPOINT_AVERAGE_SESSIONS
+    );
+    setPosts(data);
+  };
+
+  if (posts === null) {
+    return null;
+  }
+
+  console.log(posts.data.sessions);
   const data = [];
-  USER_AVERAGE_SESSIONS[0].sessions.forEach((item, index) => {
+  posts.data.sessions.forEach((item, index) => {
     switch (item.day) {
       case 1:
         data.push({

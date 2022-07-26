@@ -1,6 +1,10 @@
 import "../../css/style.css";
 import { LogoSportSee } from "../LogoSportSee";
 
+/**
+ * component for display the header of the home page
+ * @returns {JSX.Element}
+ */
 export const Header = () => {
   return (
     <header>

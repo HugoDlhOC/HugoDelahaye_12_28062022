@@ -248,16 +248,16 @@ header .logo .logo__menu a li {
 .dashboard-content--custompiechart .custompiechart--labels #custompiechart--label-one {
   font-size: 20px;
   left: 43%;
-  top: 105px;
+  top: 110px;
   color: #282D30;
   font-weight: bold;
 }
 .dashboard-content--custompiechart .custompiechart--labels #custompiechart--label-two {
-  top: 128px;
+  top: 141px;
   left: 39%;
 }
 .dashboard-content--custompiechart .custompiechart--labels #custompiechart--label-three {
-  top: 148px;
+  top: 165px;
   left: 41%;
 }
 

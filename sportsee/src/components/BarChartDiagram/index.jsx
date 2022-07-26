@@ -1,6 +1,6 @@
-import React, { PureComponent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { findAll, findDataChart } from "../../services/postAPI";
+import { findDataChart } from "../../services/postAPI";
 
 import {
   BarChart,
@@ -14,19 +14,25 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { USER_ACTIVITY } from "../../assets/data/data";
-import { logDOM } from "@testing-library/react";
 
+/**
+ * component BarChart for USER_ACTIVITY data, realized with Recharts
+ * @returns {JSX.Element}
+ */
 export const BarChartDiagram = () => {
   const [posts, setPosts] = useState(null);
 
-  //Le hook useEffect ne peut pas être une fct asynchrone, donc création d'une fonction fecthAllPosts()
+  //The useEffect hook cannot be an asynchronous fct, so creating a fecthAllPosts() function
   useEffect(() => {
     fetchAllPosts();
   }, []);
 
   const fetchAllPosts = async () => {
-    const dataTest = await findDataChart("12", "activity");
-    setPosts(dataTest);
+    const data = await findDataChart(
+      process.env.REACT_APP_API_USERID,
+      process.env.REACT_APP_API_ENDPOINT_USER_ACTIVITY
+    );
+    setPosts(data);
   };
 
   if (posts === null) {
@@ -36,7 +42,7 @@ export const BarChartDiagram = () => {
   console.log(posts.data.sessions);
   console.log(USER_ACTIVITY);
   const data = [];
-  USER_ACTIVITY[0].sessions.forEach((item, index) => {
+  posts.data.sessions.forEach((item, index) => {
     data.push({
       nameXAxis: index + 1,
       kg: item.kilogram,

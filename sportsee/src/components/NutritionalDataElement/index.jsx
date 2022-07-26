@@ -1,5 +1,13 @@
 import PropTypes from "prop-types";
 
+/**
+ * component display nutritional icons
+ * @param idIcon
+ * @param icon
+ * @param data
+ * @param type
+ * @returns {JSX.Element}
+ */
 export const NutritionalDataElement = ({ idIcon, icon, data, type }) => {
   return (
     <div className={"nutritionaldata--element"}>
