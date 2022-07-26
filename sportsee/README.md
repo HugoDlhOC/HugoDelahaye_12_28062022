@@ -24,7 +24,7 @@ Hugo DELAHAYE
 
 This project was built under the Creative Commons licence.
 
-## Back end part
+## Back-end part
 ### Prerequisites
 
 - [NodeJS (**version 12.18**)](https://nodejs.org/en/)
@@ -32,12 +32,17 @@ This project was built under the Creative Commons licence.
 
 ### Launching the project
 
-- Fork the repository
-- Clone it on your computer.
+- [Clone this repository on your computer.](https://github.com/HugoDlhOC/HugoDelahaye_12_28062022back)
 - The `yarn` command will allow you to install the dependencies.
 - The `yarn dev` command will allow you to run the micro API.
+- By default, the API is available in 3000 port
 
 ## Front-end part
 ### Prerequisites
 
 - [NodeJS (**version 12.18**)](https://nodejs.org/en/)
+
+### Launching the project
+- In a terminal, in the folder sportsee, launch npm install for install dependencies
+- You can configure the .env file, you can change the URL of API, the UserID, or names of differently charts
+- Write the command npm run start, the app will run in a another port of 3000, like 3001
