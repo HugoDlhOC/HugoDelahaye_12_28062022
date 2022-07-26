@@ -8,7 +8,6 @@ import { Dashboard } from "../../components/Dashboard";
  * @returns {JSX.Element}
  */
 export const Home = () => {
-  console.log(USER_MAIN_DATA[0].userInfos.firstName);
   return (
     <div>
       <Header />

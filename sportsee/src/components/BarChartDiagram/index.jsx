@@ -39,8 +39,6 @@ export const BarChartDiagram = () => {
     return null;
   }
 
-  console.log(posts.data.sessions);
-  console.log(USER_ACTIVITY);
   const data = [];
   posts.data.sessions.forEach((item, index) => {
     data.push({
@@ -49,10 +47,6 @@ export const BarChartDiagram = () => {
       kcal: item.calories,
     });
   });
-
-  console.log(USER_ACTIVITY[0].sessions.length);
-  console.log(data);
-  console.log(USER_ACTIVITY[0].sessions);
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {

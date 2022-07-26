@@ -43,6 +43,8 @@ This project was built under the Creative Commons licence.
 - [NodeJS (**version 12.18**)](https://nodejs.org/en/)
 
 ### Launching the project
+
+- [Clone this repository on your computer.](https://github.com/HugoDlhOC/HugoDelahaye_12_28062022)
 - In a terminal, in the folder sportsee, launch npm install for install dependencies
 - You can configure the .env file, you can change the URL of API, the UserID, or names of differently charts
 - Write the command npm run start, the app will run in a another port of 3000, like 3001

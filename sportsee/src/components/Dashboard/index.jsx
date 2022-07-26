@@ -28,7 +28,7 @@ export const Dashboard = ({}) => {
   if (posts === null) {
     return null;
   }
-  console.log(posts.data);
+
   return (
     <div className={"dashboard-content"}>
       <div className={"dashboard-content--userinfo"}>

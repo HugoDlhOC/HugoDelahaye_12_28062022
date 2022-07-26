@@ -37,7 +37,6 @@ export const SimpleRadarChartDiagram = () => {
     return null;
   }
 
-  console.log(posts.data.sessions);
   const data = [];
 
   Object.values(posts.data.kind).forEach((item, index) => {

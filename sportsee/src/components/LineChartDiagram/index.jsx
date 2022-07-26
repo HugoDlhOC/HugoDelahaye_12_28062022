@@ -35,7 +35,6 @@ export const LineChartDiagram = () => {
     return null;
   }
 
-  console.log(posts.data.sessions);
   const data = [];
   posts.data.sessions.forEach((item, index) => {
     switch (item.day) {
@@ -90,7 +89,6 @@ export const LineChartDiagram = () => {
         break;
     }
   });
-  console.log(data);
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {

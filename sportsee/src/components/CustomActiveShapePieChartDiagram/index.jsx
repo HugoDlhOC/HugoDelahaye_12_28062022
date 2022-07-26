@@ -25,9 +25,7 @@ export const CustomActiveShapePieChartDiagram = (dataAPI) => {
   const dataFillingDiagram = [{ name: "Group A", value: 1 }];
 
   const COLORS = ["#FBFBFB", "#FF0000"];
-  //dotenv.config();
-  console.log(process.env.REACT_APP_API_URL);
-  console.log(process.env.REACT_APP_API_USERID);
+
   return (
     <figure className={"dashboard-content--custompiechart"}>
       <figcaption>Score</figcaption>
