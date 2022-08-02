@@ -1,4 +1,5 @@
 //This file is used to manage requests
+
 /**
  * The role of this function is to fetch all posts from the API
  * @param dataAPI
@@ -26,7 +27,12 @@ export const findAll = (userID) => {
 export const findDataChart = (userID, typeOfChart) => {
   return fetch(`${process.env.REACT_APP_API_URL}${userID}/${typeOfChart}`)
     .then((response) => {
-      return response.json();
+      if (response.ok) {
+        return response.json();
+      } else {
+        //redirect to catch with throw
+        throw new Error("User ID is unknown");
+      }
     })
     .then((data) => data);
 };
