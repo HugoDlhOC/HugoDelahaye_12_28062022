@@ -13,13 +13,13 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { USER_ACTIVITY } from "../../assets/data/data";
+import { CustomActiveShapePieChartDiagram } from "../CustomActiveShapePieChartDiagram";
 
 /**
  * component BarChart for USER_ACTIVITY data, realized with Recharts
  * @returns {JSX.Element}
  */
-export const BarChartDiagram = () => {
+export const BarChartDiagram = ({ userId }) => {
   const [posts, setPosts] = useState(null);
 
   //The useEffect hook cannot be an asynchronous fct, so creating a fecthAllPosts() function
@@ -29,7 +29,7 @@ export const BarChartDiagram = () => {
 
   const fetchAllPosts = async () => {
     const data = await findDataChart(
-      process.env.REACT_APP_API_USERID,
+      userId,
       process.env.REACT_APP_API_ENDPOINT_USER_ACTIVITY
     );
     setPosts(data);
@@ -111,4 +111,8 @@ export const BarChartDiagram = () => {
       </ResponsiveContainer>
     </figure>
   );
+};
+
+BarChartDiagram.propTypes = {
+  userId: PropTypes.string.isRequired,
 };

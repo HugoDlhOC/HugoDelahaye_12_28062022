@@ -8,16 +8,13 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
-import {
-  USER_AVERAGE_SESSIONS,
-  USER_PERFORMANCE,
-} from "../../assets/data/data";
+import PropTypes from "prop-types";
 
 /**
  * component SimpleRadarChart for USER_PERFORMANCE data, realized with Recharts
  * @returns {JSX.Element}
  */
-export const SimpleRadarChartDiagram = () => {
+export const SimpleRadarChartDiagram = ({ userId }) => {
   const [posts, setPosts] = useState(null);
 
   //The useEffect hook cannot be an asynchronous fct, so creating a fecthAllPosts() function
@@ -27,7 +24,7 @@ export const SimpleRadarChartDiagram = () => {
 
   const fetchAllPosts = async () => {
     const data = await findDataChart(
-      process.env.REACT_APP_API_USERID,
+      userId,
       process.env.REACT_APP_API_ENDPOINT_PERFORMANCE
     );
     setPosts(data);
@@ -71,4 +68,20 @@ export const SimpleRadarChartDiagram = () => {
       </ResponsiveContainer>
     </figure>
   );
+};
+
+const CustomHover = ({ points }) => {
+  return (
+    <rect
+      x={points[0].x}
+      y={0}
+      height="100%"
+      width="100%"
+      fill="rgba(0, 0, 0, 0.1)"
+    />
+  );
+};
+
+SimpleRadarChartDiagram.propTypes = {
+  userId: PropTypes.string.isRequired,
 };

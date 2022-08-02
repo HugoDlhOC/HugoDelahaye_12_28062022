@@ -4,14 +4,14 @@ import { SimpleRadarChartDiagram } from "../SimpleRadarChartDiagram";
 import { NutritionalDataGroup } from "../NutritionalDataGroup";
 import { CustomActiveShapePieChartDiagram } from "../CustomActiveShapePieChartDiagram";
 import { findAll } from "../../services/postAPI";
-import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 /**
  * component to display informations
  * @returns {JSX.Element}
  */
-export const Dashboard = ({}) => {
+export const Dashboard = ({ userId }) => {
   const [posts, setPosts] = useState(null);
 
   //The useEffect hook cannot be an asynchronous fct, so creating a fecthAllPosts() function
@@ -20,7 +20,7 @@ export const Dashboard = ({}) => {
   }, []);
 
   const fetchAllPosts = async () => {
-    findAll(process.env.REACT_APP_API_USERID)
+    findAll(userId)
       .then((data) => setPosts(data))
       .catch((error) => alert(error));
   };
@@ -42,15 +42,22 @@ export const Dashboard = ({}) => {
       </div>
       <div className={"dashboard-content--diagrams-nutritionalgroup"}>
         <div className={"dashboard-content--diagrams"}>
-          <BarChartDiagram />
+          <BarChartDiagram userId={userId} />
           <div className={"dashboard-content--diagrams-secondary"}>
-            <LineChartDiagram />
-            <SimpleRadarChartDiagram />
-            <CustomActiveShapePieChartDiagram dataAPI={posts.data} />
+            <LineChartDiagram userId={userId} />
+            <SimpleRadarChartDiagram userId={userId} />
+            <CustomActiveShapePieChartDiagram
+              dataAPI={posts.data}
+              userId={userId}
+            />
           </div>
         </div>
         <NutritionalDataGroup dataAPI={posts.data} />
       </div>
     </div>
   );
+};
+
+Dashboard.propTypes = {
+  userId: PropTypes.string.isRequired,
 };

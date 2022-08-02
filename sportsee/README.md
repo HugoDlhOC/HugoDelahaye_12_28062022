@@ -46,5 +46,7 @@ This project was built under the Creative Commons licence.
 
 - [Clone this repository on your computer.](https://github.com/HugoDlhOC/HugoDelahaye_12_28062022)
 - In a terminal, in the folder sportsee, launch npm install for install dependencies
-- You can configure the .env file, you can change the URL of API, the UserID, or names of differently charts
+- You can configure the .env file, you can change the URL of API, or names of differently charts
+- You can change the methode to use data; in the .env file, write 1 for use mocked data, or write 0 to use API data
+- You can choose the user among 12 or 18. Click on the good link in the page.
 - Write the command npm run start, the app will run in a another port of 3000, like 3001

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { findDataChart } from "../../services/postAPI";
+import { CustomHover } from "../CustomHover";
 import {
   LineChart,
   Line,
@@ -10,12 +11,14 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
+import { BarChartDiagram } from "../BarChartDiagram";
 
 /**
  * component LineChartDiagram for USER_AVERAGE_SESSIONS data, realized with Recharts
  * @returns {JSX.Element}
  */
-export const LineChartDiagram = () => {
+export const LineChartDiagram = ({ userId }) => {
   const [posts, setPosts] = useState(null);
 
   //The useEffect hook cannot be an asynchronous fct, so creating a fecthAllPosts() function
@@ -25,7 +28,7 @@ export const LineChartDiagram = () => {
 
   const fetchAllPosts = async () => {
     const data = await findDataChart(
-      process.env.REACT_APP_API_USERID,
+      userId,
       process.env.REACT_APP_API_ENDPOINT_AVERAGE_SESSIONS
     );
     setPosts(data);
@@ -156,14 +159,6 @@ export const LineChartDiagram = () => {
   );
 };
 
-const CustomHover = ({ points }) => {
-  return (
-    <rect
-      x={points[0].x}
-      y={0}
-      height="100%"
-      width="100%"
-      fill="rgba(0, 0, 0, 0.1)"
-    />
-  );
+LineChartDiagram.propTypes = {
+  userId: PropTypes.string.isRequired,
 };

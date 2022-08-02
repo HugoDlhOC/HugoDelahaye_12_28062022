@@ -1,0 +1,14 @@
+.choice-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 50px;
+
+  .choice-links--link{
+    text-decoration: none;
+    color: $color_black;
+    padding: 10px;
+  }
+}

@@ -1,5 +1,6 @@
 import "../../css/style.css";
 import { LogoSportSee } from "../LogoSportSee";
+import { Link } from "react-router-dom";
 
 /**
  * component for display the header of the home page
@@ -9,7 +10,7 @@ export const Header = () => {
   return (
     <header>
       <div className={"logo"}>
-        <a href={"#"}>
+        <Link to={"/"}>
           <LogoSportSee
             width={"57px"}
             height={"57px"}
@@ -17,21 +18,21 @@ export const Header = () => {
             fillBody={"#020203"}
             fillHead={"#020203"}
           />
-        </a>
+        </Link>
         <h1 className={"logo__title"}>SportSee</h1>
         <ul className={"logo__menu"}>
-          <a id={"logo__menu__home"} href={"#"}>
+          <Link to={"/"} id={"logo__menu__home"}>
             <li>Accueil</li>
-          </a>
-          <a id={"logo__menu__account"} href={"#"}>
+          </Link>
+          <Link to={"#"} id={"logo__menu__account"}>
             <li>Profil</li>
-          </a>
-          <a id={"logo__menu__setting"} href={"#"}>
+          </Link>
+          <Link to={"#"} id={"logo__menu__setting"}>
             <li>Réglage</li>
-          </a>
-          <a id={"logo__menu__community"} href={"#"}>
+          </Link>
+          <Link to={"#"} id={"logo__menu__community"}>
             <li>Communauté</li>
-          </a>
+          </Link>
         </ul>
       </div>
     </header>

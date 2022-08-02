@@ -279,5 +279,18 @@ header .logo .logo__menu a li {
   font-size: 15px;
   cursor: default;
 }
+.choice-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.choice-links .choice-links--link {
+  text-decoration: none;
+  color: #020203;
+  padding: 10px;
+}
 
 /*# sourceMappingURL=style.css.map */

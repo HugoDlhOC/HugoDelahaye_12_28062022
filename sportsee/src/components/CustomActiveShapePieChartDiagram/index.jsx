@@ -1,5 +1,5 @@
-import React, { PureComponent } from "react";
-//import * as dotenv from "dotenv";
+import React from "react";
+
 import {
   PieChart,
   Pie,
@@ -8,7 +8,6 @@ import {
   ResponsiveContainer,
   Label,
 } from "recharts";
-import { USER_MAIN_DATA } from "../../assets/data/data";
 import PropTypes from "prop-types";
 
 /**
@@ -16,11 +15,22 @@ import PropTypes from "prop-types";
  * @param dataAPI
  * @returns {JSX.Element}
  */
-export const CustomActiveShapePieChartDiagram = (dataAPI) => {
-  const data = [
-    { name: "Group A", value: 1 - dataAPI.dataAPI.todayScore },
-    { name: "Group B", value: dataAPI.dataAPI.todayScore },
-  ];
+export const CustomActiveShapePieChartDiagram = ({ dataAPI, userId }) => {
+  let data = [];
+  let contentLabel;
+  if (userId === "12") {
+    data = [
+      { name: "Group A", value: 1 - dataAPI.todayScore },
+      { name: "Group B", value: dataAPI.todayScore },
+    ];
+    contentLabel = dataAPI.todayScore * 100 + "%";
+  } else if (userId === "18") {
+    data = [
+      { name: "Group A", value: 1 - dataAPI.score },
+      { name: "Group B", value: dataAPI.score },
+    ];
+    contentLabel = dataAPI.score * 100 + "%";
+  }
 
   const dataFillingDiagram = [{ name: "Group A", value: 1 }];
 
@@ -67,9 +77,7 @@ export const CustomActiveShapePieChartDiagram = (dataAPI) => {
         </PieChart>
       </ResponsiveContainer>
       <div className={"custompiechart--labels"}>
-        <label id={"custompiechart--label-one"}>
-          {USER_MAIN_DATA[0].todayScore * 100 + "%"}
-        </label>
+        <label id={"custompiechart--label-one"}>{contentLabel}</label>
         <label id={"custompiechart--label-two"}>de votre</label>
         <label id={"custompiechart--label-three"}>objectif</label>
       </div>
@@ -79,4 +87,5 @@ export const CustomActiveShapePieChartDiagram = (dataAPI) => {
 
 CustomActiveShapePieChartDiagram.propTypes = {
   dataAPI: PropTypes.object.isRequired,
+  userId: PropTypes.string.isRequired,
 };

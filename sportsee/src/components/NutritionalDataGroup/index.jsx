@@ -4,7 +4,6 @@ import { ReactComponent as IconCarbohydrates } from "../../assets/icons/iconCarb
 import { ReactComponent as IconLipids } from "../../assets/icons/iconLipids.svg";
 import { ReactComponent as IconProtein } from "../../assets/icons/iconProtein.svg";
 import PropTypes from "prop-types";
-import { CustomActiveShapePieChartDiagram } from "../CustomActiveShapePieChartDiagram";
 
 /**
  * component display data nutrition of user
