@@ -48,7 +48,6 @@ export const findDataChart = (userID, typeOfChart) => {
             ),
           });
         });
-        break;
 
       case "average-sessions":
         return new Promise((resolve, reject) => {
@@ -58,7 +57,6 @@ export const findDataChart = (userID, typeOfChart) => {
             ),
           });
         });
-        break;
 
       case "performance":
         return new Promise((resolve, reject) => {
@@ -68,7 +66,11 @@ export const findDataChart = (userID, typeOfChart) => {
             ),
           });
         });
-        break;
+
+      default:
+        return new Promise((resolve, reject) => {
+          reject("No chart select");
+        });
     }
   } else {
     return fetch(`${process.env.REACT_APP_API_URL}${userID}/${typeOfChart}`)
