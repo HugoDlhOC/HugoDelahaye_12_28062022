@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/HugoDelahaye_12_28062022.git/static/css/main.8566ed79.css",
-    "main.js": "/HugoDelahaye_12_28062022.git/static/js/main.8e18ba7f.js",
-    "static/js/787.a8762e9d.chunk.js": "/HugoDelahaye_12_28062022.git/static/js/787.a8762e9d.chunk.js",
-    "static/media/iconSwimming.svg": "/HugoDelahaye_12_28062022.git/static/media/iconSwimming.9a4f6cc7f7eecbdb0a45ecc51c52604b.svg",
-    "static/media/iconBike.svg": "/HugoDelahaye_12_28062022.git/static/media/iconBike.4cd80f6e3bd49b5684bd7f2be141cb16.svg",
-    "static/media/iconCarbohydrates.svg": "/HugoDelahaye_12_28062022.git/static/media/iconCarbohydrates.95581ba1b204199334e122af4784ab16.svg",
-    "index.html": "/HugoDelahaye_12_28062022.git/index.html",
-    "static/media/iconProtein.svg": "/HugoDelahaye_12_28062022.git/static/media/iconProtein.ffbc3b88a759c706993bb26fbd66113b.svg",
-    "static/media/iconYoga.svg": "/HugoDelahaye_12_28062022.git/static/media/iconYoga.30690b972b703cd417e484db340acf9f.svg",
-    "static/media/iconLipids.svg": "/HugoDelahaye_12_28062022.git/static/media/iconLipids.18f60e0efe37e86bcac036d673f0bab0.svg",
-    "static/media/iconCalories.svg": "/HugoDelahaye_12_28062022.git/static/media/iconCalories.25fef86ed5860200bdf90f9cd185e1e3.svg",
-    "static/media/iconBodybuilding.svg": "/HugoDelahaye_12_28062022.git/static/media/iconBodybuilding.feb4b032943e43d258aca5083a869ce5.svg",
-    "main.8566ed79.css.map": "/HugoDelahaye_12_28062022.git/static/css/main.8566ed79.css.map",
-    "main.8e18ba7f.js.map": "/HugoDelahaye_12_28062022.git/static/js/main.8e18ba7f.js.map",
-    "787.a8762e9d.chunk.js.map": "/HugoDelahaye_12_28062022.git/static/js/787.a8762e9d.chunk.js.map"
+    "main.css": "/HugoDelahaye_12_28062022/sportsee.git/static/css/main.8566ed79.css",
+    "main.js": "/HugoDelahaye_12_28062022/sportsee.git/static/js/main.28257e7a.js",
+    "static/js/787.a8762e9d.chunk.js": "/HugoDelahaye_12_28062022/sportsee.git/static/js/787.a8762e9d.chunk.js",
+    "static/media/iconSwimming.svg": "/HugoDelahaye_12_28062022/sportsee.git/static/media/iconSwimming.9a4f6cc7f7eecbdb0a45ecc51c52604b.svg",
+    "static/media/iconBike.svg": "/HugoDelahaye_12_28062022/sportsee.git/static/media/iconBike.4cd80f6e3bd49b5684bd7f2be141cb16.svg",
+    "static/media/iconCarbohydrates.svg": "/HugoDelahaye_12_28062022/sportsee.git/static/media/iconCarbohydrates.95581ba1b204199334e122af4784ab16.svg",
+    "index.html": "/HugoDelahaye_12_28062022/sportsee.git/index.html",
+    "static/media/iconProtein.svg": "/HugoDelahaye_12_28062022/sportsee.git/static/media/iconProtein.ffbc3b88a759c706993bb26fbd66113b.svg",
+    "static/media/iconYoga.svg": "/HugoDelahaye_12_28062022/sportsee.git/static/media/iconYoga.30690b972b703cd417e484db340acf9f.svg",
+    "static/media/iconLipids.svg": "/HugoDelahaye_12_28062022/sportsee.git/static/media/iconLipids.18f60e0efe37e86bcac036d673f0bab0.svg",
+    "static/media/iconCalories.svg": "/HugoDelahaye_12_28062022/sportsee.git/static/media/iconCalories.25fef86ed5860200bdf90f9cd185e1e3.svg",
+    "static/media/iconBodybuilding.svg": "/HugoDelahaye_12_28062022/sportsee.git/static/media/iconBodybuilding.feb4b032943e43d258aca5083a869ce5.svg",
+    "main.8566ed79.css.map": "/HugoDelahaye_12_28062022/sportsee.git/static/css/main.8566ed79.css.map",
+    "main.28257e7a.js.map": "/HugoDelahaye_12_28062022/sportsee.git/static/js/main.28257e7a.js.map",
+    "787.a8762e9d.chunk.js.map": "/HugoDelahaye_12_28062022/sportsee.git/static/js/787.a8762e9d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8566ed79.css",
-    "static/js/main.8e18ba7f.js"
+    "static/js/main.28257e7a.js"
   ]
 }
